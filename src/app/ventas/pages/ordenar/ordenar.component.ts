@@ -9,6 +9,7 @@ import { Color, Heore } from '../../interfaces/ventas.interfaces';
 export class OrdenarComponent implements OnInit {
   texto: string = 'nosotros';
   enMayuscula: boolean = true;
+  orden: string = 'sin valor';
 
   heroes: Heore[] = [
     {
@@ -38,7 +39,11 @@ export class OrdenarComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  heroes2: Heore[] = [];
+
+  constructor() {
+    this.heroes2 = [...this.heroes];
+  }
 
   ngOnInit(): void {}
 
@@ -47,6 +52,18 @@ export class OrdenarComponent implements OnInit {
       this.enMayuscula = false;
     } else {
       this.enMayuscula = true;
+    }
+  }
+
+  changeT(param: string) {
+    if (param === 'nombre') {
+      this.orden = param;
+    } else if (param === 'vuela') {
+      this.orden = param;
+    } else if (param === 'color') {
+      this.orden = param;
+    } else {
+      this.orden = this.orden;
     }
   }
 }

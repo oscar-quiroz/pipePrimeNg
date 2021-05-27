@@ -1,4 +1,38 @@
 <div class="text-layout">
     <h1>Pipes Personalizados</h1>
-    <p>Pipes creados por {{ texto | mayuscula: true }}</p>
+    <p>Pipes creados por {{ texto | mayuscula: enMayuscula }}</p>
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-left"></div>
+
+    <div class="p-toolbar-group-right">
+        <p-button (click)="change()" class="p-mr-1 p-button-info">
+            toggle mayúsculas
+        </p-button>
+        <button pButton type="button" icon="pi pi-sort" label="por Nombre" class="p-mr-1 p-button-secondary"></button>
+        <button pButton type="button" icon="pi pi-sort" label="por Valores" class="p-mr-1 p-button-danger"></button>
+        <button pButton type="button" icon="pi pi-sort" label="por Color" class="p-mr-1 p-button-warning"></button>
+    </div>
+</p-toolbar>
+
+<div class="p-grid">
+    <div class="p-col p-mt2">
+        <p-table [value]="heroes">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Vuela</th>
+                    <th>Color</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr>
+                    <td>{{ heroe.nombre }}</td>
+                    <td>{{ heroe.vuela | vuela }}</td>
+                    <td>{{ heroe.color }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
 </div>

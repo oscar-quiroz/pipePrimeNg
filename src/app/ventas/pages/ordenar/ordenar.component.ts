@@ -3,14 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ordenar',
   templateUrl: './ordenar.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class OrdenarComponent implements OnInit {
+  texto: string = 'nosotros';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
